@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  "生成golang后台桩代码":
+  Generate-Golang-Stub-For-Backend:
     runs-on: ubuntu-latest
     steps:
       - name: 拉取代码
