@@ -45,5 +45,7 @@ jobs:
       #   run: |
       #     ls ${{ github.workspace }}
       - name: 输出 ${{ secrets.MY_SECRET_NAME }}
+        env:
+          VITE_MY_PRAVITE_KEY: ${{ secrets.MY_SECRET_NAME }}
         run: |
-          echo MY_SECRET_NAME="${{ secrets.MY_SECRET_NAME }}"
+          echo VITE_MY_PRAVITE_KEY="$VITE_MY_PRAVITE_KEY"
