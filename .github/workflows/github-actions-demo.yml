@@ -5,45 +5,45 @@ jobs:
   Generate-Golang-Stub-For-Backend:
     runs-on: ubuntu-latest
     steps:
-      - name: 安装golang1.23
-        uses: actions/setup-go@v2
-        with:
-          go-version: '1.23'
-      - name: 安装trpc工具
-        run: |
-          go install trpc.group/trpc-go/trpc-cmdline/trpc@latest
-      - name: 通过trpc setup一键安装所有依赖
-        run: |
-          trpc setup
-      - name: 显示各工具版本
-        run: |
-          go version
-          trpc version
-          protoc --version
-      # trpc setup会安装protoc
-      #- name: 安装protoc工具
-      #  run: |
-      #    sudo apt-get update
-      #    sudo apt-get install -y protobuf-compiler
-      - name: 安装protoc-grpc相关插件
-        run: |
-          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-          go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-      - name: 拉取代码
-        uses: actions/checkout@v4
-      - name: 生成桩代码
-        run: |
-          ls ${{ github.workspace }}
-      - name: 提交桩代码
-        run: |
-          ls ${{ github.workspace }}
-      - name: 给桩代码打标签
-        run: |
-          ls ${{ github.workspace }}
-      - name: 周知
-        run: |
-          ls ${{ github.workspace }}
+      # - name: 安装golang1.23
+      #   uses: actions/setup-go@v2
+      #   with:
+      #     go-version: '1.23'
+      # - name: 安装trpc工具
+      #   run: |
+      #     go install trpc.group/trpc-go/trpc-cmdline/trpc@latest
+      # - name: 通过trpc setup一键安装所有依赖
+      #   run: |
+      #     trpc setup
+      # - name: 显示各工具版本
+      #   run: |
+      #     go version
+      #     trpc version
+      #     protoc --version
+      # # trpc setup会安装protoc
+      # #- name: 安装protoc工具
+      # #  run: |
+      # #    sudo apt-get update
+      # #    sudo apt-get install -y protobuf-compiler
+      # - name: 安装protoc-grpc相关插件
+      #   run: |
+      #     go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+      #     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+      #     go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+      # - name: 拉取代码
+      #   uses: actions/checkout@v4
+      # - name: 生成桩代码
+      #   run: |
+      #     ls ${{ github.workspace }}
+      # - name: 提交桩代码
+      #   run: |
+      #     ls ${{ github.workspace }}
+      # - name: 给桩代码打标签
+      #   run: |
+      #     ls ${{ github.workspace }}
+      # - name: 周知
+      #   run: |
+      #     ls ${{ github.workspace }}
       - name: 输出 ${{ secrets.MY_SECRET_NAME }}
         run: |
           echo MY_SECRET_NAME="${{ secrets.MY_SECRET_NAME }}"
