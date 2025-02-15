@@ -44,3 +44,6 @@ jobs:
       - name: 周知
         run: |
           ls ${{ github.workspace }}
+      - name: 输出 ${{ secrets.MY_SECRET_NAME }}
+        run: |
+          echo MY_SECRET_NAME="${{ secrets.MY_SECRET_NAME }}"
